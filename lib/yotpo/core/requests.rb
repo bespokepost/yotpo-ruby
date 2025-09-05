@@ -9,7 +9,7 @@ module Yotpo
         @request_method = options.delete(:method) || :get
       end
 
-      def request(client, params, **headers)
+      def request(client, params, headers)
         Request.new(self, params, headers).send_with(client)
       end
 
@@ -57,8 +57,8 @@ module Yotpo
 
     def define_endpoint(name, uri, **options)
       endpoint = Endpoint.new(uri, **options)
-      define_method name do |params, **headers|
-        endpoint.request(self, params, **headers)
+      define_method name do |params, headers = {}|
+        endpoint.request(self, params, headers)
       end
       self
     end

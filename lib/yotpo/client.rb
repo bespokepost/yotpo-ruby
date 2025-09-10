@@ -13,6 +13,7 @@ require 'yotpo/api/order'
 require 'yotpo/api/order_fulfillment'
 require 'yotpo/api/product'
 require 'yotpo/api/product_variant'
+require 'yotpo/api/review'
 require 'yotpo/api/unsubscriber'
 
 module Yotpo
@@ -23,6 +24,7 @@ module Yotpo
     include Yotpo::OrderFulfillment
     include Yotpo::Product
     include Yotpo::ProductVariant
+    include Yotpo::Review
     include Yotpo::Unsubscriber
 
     #
